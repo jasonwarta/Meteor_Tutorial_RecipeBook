@@ -1,0 +1,8 @@
+<template name="RecipeDetails">
+	<h1>{{recipe.name}}</h1>
+	<h3>{{recipe.desc}}</h3>
+	{{#each recipe.ingredients}}
+		<ul class="ingredient">{{amount}} {{name}}</ul>
+	{{/each}}
+	<a href="/recipebook">Recipe Book</a>
+</template>
