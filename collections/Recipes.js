@@ -97,4 +97,4 @@ Meteor.methods({
 });
 
 
-Recipes.attachSchema( RecipeSchema );
+Recipes.attachSchema(RecipeSchema);
