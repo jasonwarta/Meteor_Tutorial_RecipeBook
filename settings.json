@@ -1,7 +1,13 @@
 {
 	"public": {
 		"ga": {
-			"account": "UA-XXXXXXXX-X"
+			"account": "UA-88029644-1"
+		},
+		"reCaptcha": {
+			"siteKey": "6Lcb6gwUAAAAAJ0swRpz54GQsSmYBxaruPH9Vpdr"
 		}
+	},
+	"reCaptcha": {
+		"secretKey": "6Lcb6gwUAAAAAG0ubucTnJqAgCj72rwu2Ut8i_LP"
 	}
 }

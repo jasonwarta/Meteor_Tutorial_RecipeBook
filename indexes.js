@@ -17,3 +17,4 @@
 // 	}),
 // 	permission: (options) => options.userId, // only allow searching when the user is logged in
 // });
+

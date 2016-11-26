@@ -27,16 +27,22 @@ spiderable@1.0.14-release-testing.0
 fastclick@1.0.13
 dburles:collection-helpers
 raix:handlebar-helpers
+
 aldeed:collection2
 aldeed:autoform
-accounts-ui
-accounts-password
+aldeed:template-extension
+
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
 meteortoys:allthings
 datariot:ganalytics
 
+accounts-ui
+accounts-password
+useraccounts:unstyled
+
 easy:search
+alanning:roles
 
 check@1.2.4
