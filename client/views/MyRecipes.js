@@ -7,7 +7,7 @@ Template.MyRecipes.onCreated(function() {
 
 Template.MyRecipes.helpers({
 	recipes: ()=> {
-		return Recipes.find({});
+		return Recipes.find({},{ sort: {insensitive: 1, author: 1, createdAt: 1}});
 	}
 });
 
