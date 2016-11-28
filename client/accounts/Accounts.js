@@ -5,21 +5,21 @@ AccountsTemplates.addFields([
 		type: 'text',
 		displayName: 'Username',
 		required: true
-	}
-	,
+	},
 	{
 	    _id: 'password',
 	    type: 'password',
+	    displayName: 'Password',
 	    placeholder: {
-	        signUp: "Password"
+	        signUp: "Password: at least 12 characters, 1 digit, 1 lowercase and 1 uppercase"
 	    },
 	    required: true,
-	    minLength: 8,
-	    re: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-_=+]).{8,}/,
-	    errStr: 'At least 1 digit, 1 lowercase, and 1 uppercase, and 1 of \"!@#$%^&*-_=+\"',
+	    minLength: 12,
+	    re: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}/,
+	    errStr: 'At least 12 chars: 1 digit, 1 lowercase, and 1 uppercase',
 	}
 ]);
 
 AccountsTemplates.configure({
-	showReCaptcha: true
+	showReCaptcha: true,
 });
