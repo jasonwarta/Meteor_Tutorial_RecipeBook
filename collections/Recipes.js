@@ -24,9 +24,9 @@ Ingredient = new SimpleSchema({
 
 Direction = new SimpleSchema({
 	stepNo: {
-		type: String,
+		type: Number,
 		label: "Step",
-		max: 10
+		min: 1
 	},
 	directions: {
 		type: String,
