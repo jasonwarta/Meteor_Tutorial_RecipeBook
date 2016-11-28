@@ -1,17 +1,17 @@
-Template.Recipes.onCreated(function() {
+Template.MyRecipes.onCreated(function() {
 	var self = this;
 	self.autorun(function() {
 		self.subscribe('recipes');
 	});
 });
 
-Template.Recipes.helpers({
+Template.MyRecipes.helpers({
 	recipes: ()=> {
 		return Recipes.find({});
 	}
 });
 
-Template.Recipes.events({
+Template.MyRecipes.events({
 	'click .new-recipe': () => {
 		Session.set('newRecipe', true);
 	}

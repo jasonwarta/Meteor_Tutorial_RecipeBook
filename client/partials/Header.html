@@ -1,10 +1,21 @@
 <template name="Header">
-	<header>
+	<header class="header">
 		<a href="/" style="text-decoration:none">
 			<h1><i class="fa fa-cutlery"></i> Recipe Book</h1>
 		</a>
-		{{> MainNav}}
-		<!-- {{> loginButtons}} -->
+
+		<ul class="greeting">
+            {{#if currentUser}}
+	            <h3>
+	            	<li>Hello, {{username}}!</li>  
+	            	<li class="logout">Logout</li>
+	            </h3>
+        	{{else}}
+	        	<h3>
+		            <li class="login">Login/Sign-up</li>
+	        	</h3>
+            {{/if}}
+        </ul>
 		{{> LoginModal}}
 	</header>
 </template>

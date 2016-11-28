@@ -1,5 +1,5 @@
 Meteor.publish('recipes', function(){
-	return Recipes.find({author: this.userId},{ sort: {name: 1}});
+	return Recipes.find({author: this.userId});
 });
 
 Meteor.publish('singleRecipe', function(id) {
@@ -7,6 +7,14 @@ Meteor.publish('singleRecipe', function(id) {
 	return Recipes.find({_id: id});
 });
 
-Meteor.publish('browseRecipes', function(){
-	return Recipes.find();
+Meteor.publish('browse', function(){
+	return Recipes.find({});
 });
+
+Meteor.publish('author',function(){
+	return Meteor.users.find({},{fields: {username:1}});
+});
+
+// Meteor.publish('infiniteBrowse', function(limit){
+// 	return Recipes.find({},{limit: limit,sort:{name:1}});
+// });

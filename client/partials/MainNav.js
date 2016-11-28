@@ -1,3 +1,12 @@
+Template.MainNav.helpers({
+	username: function() {
+		var id=Meteor.users.findOne(Meteor.userId());
+		if(typeof(id) !== 'undefined')
+			return id.username;
+		// return Meteor.users.findOne(Meteor.userId()).username;
+	}
+});
+
 Template.MainNav.events({
 	'click .login': ()=> {
 		Session.set('nav-toggle','open');

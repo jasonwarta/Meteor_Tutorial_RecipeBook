@@ -22,7 +22,7 @@ Ingredient = new SimpleSchema({
 
 Direction = new SimpleSchema({
 	stepNo: {
-		type: Number,
+		type: String,
 		label: "Step"
 	},
 	directions: {
@@ -39,6 +39,17 @@ RecipeSchema = new SimpleSchema({
 		type: String,
 		label: "Name"
 	},
+	insensitive: {
+		type: String,
+		label: "Insensitive",
+		autoValue: function() {
+			if (this.field('name').value)
+				return this.field('name').value.toLowerCase();
+		},
+		autoform: {
+			type: "hidden"
+		}
+	},
 	desc: {
 		type: String,
 		label: "Description"
@@ -53,7 +64,7 @@ RecipeSchema = new SimpleSchema({
 		type: String
 	},
 	serves: {
-		type: Number
+		type: String
 	},
 	ingredients: {
 		type: [Ingredient]
@@ -65,7 +76,11 @@ RecipeSchema = new SimpleSchema({
 		type: String,
 		label: "Author",
 		autoValue: function() {
-			return this.userId
+			if (this.isInsert){
+				return this.userId
+			} else {
+				return this.field('author').value
+			}
 		},
 		autoform: {
 			type: "hidden"
@@ -75,8 +90,17 @@ RecipeSchema = new SimpleSchema({
 		type: Date,
 		label: "Created At",
 		autoValue: function() {
-			return new Date()
+			if (this.isInsert){
+				return new Date();
+			}
 		},
+		autoform: {
+			type: "hidden"
+		}
+	},
+	favorites: {
+		type: [String],
+		optional: true,
 		autoform: {
 			type: "hidden"
 		}
@@ -84,15 +108,22 @@ RecipeSchema = new SimpleSchema({
 });
 
 Meteor.methods({
-	toggleMenuItem: function(id, currentState) {
-		Recipes.update(id, {
-			$set: {
-				inMenu: !currentState
-			}
-		});
-	},
 	deleteRecipe: function(id) {
 		Recipes.remove(id);
+	},
+	setFavorite: function(recipeId) {
+		Recipes.update({
+			_id: recipeId
+		},{
+			$push: { favorites: this.userId },
+		});
+	},
+	removeFavorite: function(recipeId){
+		Recipes.update({
+			_id: recipeId,
+		},{
+			$pull: { favorites: this.userId }
+		});
 	}
 });
 

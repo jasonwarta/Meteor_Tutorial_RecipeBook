@@ -10,23 +10,26 @@ module.exports = {
   },
 
   meteor: {
-    name: 'recipedb',
+    name: 'recipebook',
     path: '../',
     servers: {
       one: {}
     },
     buildOptions: {
       serverOnly: true,
+      cleanAfterBuild: true,
+      debug: true
     },
-    nodeVersion: "0.10.40",
     env: {
-      ROOT_URL: 'warta.recipes',
-      MONGO_URL: 'mongodb://localhost/meteor'
+      ROOT_URL: 'http://localhost',
+      MONGO_URL: 'mongodb://localhost/meteor',
+      port: 3000
+    },
+    docker: {
+      image: 'abernix/meteord:base'
     },
 
     //dockerImage: 'kadirahq/meteord'
-    dockerImage: 'abernix/meteord:base',
-    //dockerImage: 'abernix/meteord:base',
     deployCheckWaitTime: 60
   },
 

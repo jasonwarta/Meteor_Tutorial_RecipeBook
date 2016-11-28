@@ -1,8 +1,8 @@
 <template name="MainNav">
 	<nav class="main-nav">
-        <ul>
-            <li><a href="/">Home</a></li>
+        <ul class="greeting">
             {{#if currentUser}}
+                 <li>Hello, {{username}}!</li>  
             	<li class="logout">Logout</li>
         	{{else}}
 	            <li class="login">Login/Sign-up</li>

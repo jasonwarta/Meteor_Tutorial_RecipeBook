@@ -1,5 +1,7 @@
 <template name="RecipeDetails">
-	<i class="fa fa-pencil"></i>
+	{{#if recipeOwner}}
+		<i class="fa fa-pencil"></i>
+	{{/if}}
 	<h1>{{recipe.name}}</h1>
 	{{#if editMode }}
 		{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
@@ -14,5 +16,4 @@
 			<ol class="direction">{{directions}}</ol>
 		{{/each}}
 	{{/if}}
-	<a href="/recipebook">Recipe Book</a>
 </template>

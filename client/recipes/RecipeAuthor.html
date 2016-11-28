@@ -1,0 +1,9 @@
+<template name="RecipeAuthor">
+	<article class="recipe">
+		<h3>{{name}}</h3>
+		<i class="fa {{#if favorite _id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
+		<p>{{desc}}</p>
+		<p>Author: {{recipeAuthor author}}</p>
+		<a href="/recipe/{{_id}}">View Details</a>
+	</article>
+</template>

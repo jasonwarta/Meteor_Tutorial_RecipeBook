@@ -7,17 +7,7 @@
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
 		{{else}}
 			<p>{{desc}}</p>
-			<!-- <p>
-				{{#each ingredients}}
-					<ul class="ingredient">{{name}} - {{amount}}</ul>
-				{{/each}}
-			</p> -->
 			<a href="/recipe/{{_id}}">View Details</a>
-			<!-- {{#if inMenu}}
-				<button class="btn-deny toggle-menu">Remove From Menu</button>
-			{{else}}
-				<button class="btn-primary toggle-menu">Add To Menu</button>
-			{{/if}} -->
 		{{/if}}
 	</article>
 </template>
