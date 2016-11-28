@@ -36,7 +36,7 @@ Template.RecipeDetails.events({
 		// console.log("editmode");
 		template.editMode.set(!template.editMode.get());
 	},
-	'click .btn-primary': function(event, template){
+	'submit': function(event, template){
 		template.editMode.set(false);
 	}
 });

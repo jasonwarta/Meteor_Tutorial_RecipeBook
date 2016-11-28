@@ -15,7 +15,10 @@
 			{{/each}}
 			<h3>Directions</h3>
 			{{#each recipe.directions}}
-				<ol class="direction">{{directions}}</ol>
+				<ul class="direction">
+					<i class="step-num">{{stepNo}}</i>
+					&nbsp;&nbsp;{{directions}}
+				</ul>
 			{{/each}}
 		{{/if}}
 	</article>

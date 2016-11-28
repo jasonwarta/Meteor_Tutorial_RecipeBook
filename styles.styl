@@ -121,6 +121,11 @@ header
             float right
         .logout
             cursor pointer
+        .hello
+            visibility hidden
+        +above($small)
+            .hello
+                visibility visible
 
 p
     color #333 
@@ -377,7 +382,6 @@ input, select, textarea
         font-size 1.2em 
     &:hover 
         shadow-level(3)
-        // animation card 0.6s ease 1 forwards
             
 .recipe-detail
     background #FFF 
@@ -421,6 +425,13 @@ input, select, textarea
         font-size 1.2em 
     .ingredient, .direction
         margin-right 10px 
+    .ingredient
+        list-style-type square
+        list-style-position inside
+    .direction::first-letter
+        font-size 140%
+        color dark-blue
+        font-weight 600
         
 
 @keyframes card
