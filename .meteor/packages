@@ -35,7 +35,7 @@ aldeed:template-extension
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
-meteortoys:allthings
+# meteortoys:allthings
 datariot:ganalytics
 
 accounts-ui
