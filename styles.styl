@@ -31,6 +31,7 @@ $wide = 1200px
 black = #222
 grey = #C8C8FF
 light-grey = #EEE
+pale-blue = #79C9FF
 light-blue = #3B9CDC
 dark-blue=#246089
 red = #E54B4B
@@ -110,7 +111,7 @@ header
         justify-content space-between
         list-style none
         margin-right 20px
-        margin-top 30px
+        margin-top 27px
         li
             display inline
             padding 20px
@@ -189,8 +190,8 @@ p
         border-color @background
         shadow-level(2)
     &.btn-primary
-        background teal
-        border-color teal
+        background pale-blue
+        border-color pale-blue
         color dark-blue
         &:hover
             background @background - 40
@@ -285,9 +286,9 @@ input, select, textarea
     vertical-align middle 
 
 .side-nav
-    // fixed bottom left
-    // height 100px
-    // width 100%
+    fixed bottom left
+    height 100px
+    width 100%
     overflow hidden 
     background dark-blue
     color #FFF
@@ -302,9 +303,10 @@ input, select, textarea
     a
         color #FFF
         text-decoration none
-        padding 20px 20px
+        padding 20px 15px
         display block
         text-align center
+        font-size 14px
         trans()
         &:hover, &.active
             background light-blue 
@@ -312,12 +314,7 @@ input, select, textarea
         display block
         font-size 2em
         margin-bottom 10px   
-    @media (orientation: portrait)
-        fixed bottom left
-        height 100px
-        width 100%
-    @media (min-width: $med) and (orientation: landscape)
-    // +above($med)
+    +above($med)
         height 100%
         z-index: z.mid
         padding 120px 0
@@ -330,8 +327,7 @@ input, select, textarea
             padding 20px 10px
             &:hover, &.active
                 border-left 4px solid teal
-    @media (min-width: $large) and (orientation: landscape)
-    // +above($large)
+    +above($large)
         width $side-nav-large
         a
             padding 20px 20px
@@ -382,6 +378,50 @@ input, select, textarea
     &:hover 
         shadow-level(3)
         // animation card 0.6s ease 1 forwards
+            
+.recipe-detail
+    background #FFF 
+    padding 0 20px 20px
+    margin-bottom 20px
+    position relative 
+    z-index 1
+    shadow-level(1)
+    trans()
+    .btn-primary, .btn-deny
+        display block
+    h1
+        font-size: 3em;
+        opacity: 0.3;
+        border-bottom: rgba(0,0,0, 0.3) solid 3px
+        margin-top 0
+        margin-bottom 10px 
+    button
+        margin-top 20px 
+    .fa-trash, .fa-pencil
+        cursor pointer
+        opacity 0.3
+        font-size 1.6em
+        padding 20px
+        position absolute
+        color black
+        display block
+        top 0
+        right 0
+        trans()
+        &:hover
+            color red
+            opacity 0.6
+    .fa-pencil
+        right 40px
+        &:hover
+            color light-blue
+    &:hover 
+        shadow-level(3)
+    .ingredient, .direction, .desc
+        font-size 1.2em 
+    .ingredient, .direction
+        margin-right 10px 
+        
 
 @keyframes card
     0%
@@ -395,35 +435,25 @@ input, select, textarea
         z-index 10
         transform translate3d(0, 0, 0)
 
-.login-buttons-dropdown-align-
-    #login-dropdown-list
-        right 0
-        left auto 
-        a 
-            color dark-blue
 
-
-
-.login-modal {
+.login-modal
     position fixed;
     border solid 4px $dblue;
     top 20%;
     left 50%;
     padding 20px;
-    width 50%;
+    width 80%;
     transform translate3d(25%, -80%, 0) scale(0.5);
     background #FFF;
     opacity 0;
     @include trans();
     @include card(4);
-    &.open {
+    &.open 
         opacity 1;
         transform translateX(-50%) scale(1);
-    }
-    h3 {
+    h3 
         margin-top 0;
-    }
-    .close-login {
+    .close-login
         position absolute;
         top 0;
         right 0;
@@ -432,6 +462,6 @@ input, select, textarea
         font-size 2em;
         padding 10px 15px;
         opacity 0.2;
-    }
-}
+    +above($med)
+        width 50%
 

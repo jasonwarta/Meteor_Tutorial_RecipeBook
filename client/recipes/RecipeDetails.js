@@ -28,7 +28,12 @@ Template.RecipeDetails.helpers({
 });
 
 Template.RecipeDetails.events({
+	'click .fa-trash': function() {
+		// console.log("delete");
+		Meteor.call('deleteRecipe', this._id);
+	},
 	'click .fa-pencil' : function(event, template) {
+		// console.log("editmode");
 		template.editMode.set(!template.editMode.get());
 	},
 	'click .btn-primary': function(event, template){

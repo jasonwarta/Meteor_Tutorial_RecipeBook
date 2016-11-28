@@ -1,19 +1,22 @@
 <template name="RecipeDetails">
-	{{#if recipeOwner}}
-		<i class="fa fa-pencil"></i>
-	{{/if}}
-	<h1>{{recipe.name}}</h1>
-	{{#if editMode }}
-		{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
-	{{else}}
-		<p>{{recipe.desc}}</p>
-		<h3>Ingredients</h3>
-		{{#each recipe.ingredients}}
-			<ul class="ingredient">{{amount}} {{name}}</ul>
-		{{/each}}
-		<h3>Directions</h3>
-		{{#each recipe.directions}}
-			<ol class="direction">{{directions}}</ol>
-		{{/each}}
-	{{/if}}
+	<article class="recipe-detail">
+		<h1>{{recipe.name}}</h1>
+		{{#if recipeOwner}}
+			<i class="fa fa-pencil"></i>
+			<i class="fa fa-trash"></i>
+		{{/if}}
+		{{#if editMode }}
+			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
+		{{else}}
+			<p class="desc">{{recipe.desc}}</p>
+			<h3>Ingredients</h3>
+			{{#each recipe.ingredients}}
+				<ul class="ingredient">{{amount}} {{name}}</ul>
+			{{/each}}
+			<h3>Directions</h3>
+			{{#each recipe.directions}}
+				<ol class="direction">{{directions}}</ol>
+			{{/each}}
+		{{/if}}
+	</article>
 </template>
