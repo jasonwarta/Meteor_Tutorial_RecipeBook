@@ -141,10 +141,12 @@ p
 .main-layout
     lost-center 90%
     margin-top 20px 
-    +above($med)
+    // +above($med)
+    @media (min-width: $med) and (orientation: landscape)
         lost-center 90%
         padding-left $side-nav
-    +above($large)
+    // +above($large)
+    @media (min-width: $large) and (orientation: landscape)
         lost-center 80%
         margin-top 40px
         padding-left $side-nav-large
@@ -283,9 +285,9 @@ input, select, textarea
     vertical-align middle 
 
 .side-nav
-    fixed bottom left
-    height 100px
-    width 100%
+    // fixed bottom left
+    // height 100px
+    // width 100%
     overflow hidden 
     background dark-blue
     color #FFF
@@ -309,8 +311,13 @@ input, select, textarea
     i
         display block
         font-size 2em
-        margin-bottom 10px 
-    +above($med)
+        margin-bottom 10px   
+    @media (orientation: portrait)
+        fixed bottom left
+        height 100px
+        width 100%
+    @media (min-width: $med) and (orientation: landscape)
+    // +above($med)
         height 100%
         z-index: z.mid
         padding 120px 0
@@ -323,7 +330,8 @@ input, select, textarea
             padding 20px 10px
             &:hover, &.active
                 border-left 4px solid teal
-    +above($large)
+    @media (min-width: $large) and (orientation: landscape)
+    // +above($large)
         width $side-nav-large
         a
             padding 20px 20px
