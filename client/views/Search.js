@@ -9,7 +9,8 @@ Template.Search.helpers({
 	recipes: function(searchString) {
 		var pattern = ".*"+searchString+".*";
 		return Recipes.find({
-			$or:[	
+			$or:
+				[	
 					{ name: { $regex: pattern, $options: 'i'} },
 					{ desc: { $regex: pattern, $options: 'i'} },
 					{ "ingredients.name": { $regex: pattern, $options: 'i'} },

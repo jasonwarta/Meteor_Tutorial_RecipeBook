@@ -5,7 +5,7 @@
 			<i class="fa fa-pencil"></i>
 			<i class="fa fa-trash"></i>
 		{{/if}}
-		{{#if editMode }}
+		{{#if editMode}}
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
 		{{else}}
 			<p class="desc">{{recipe.desc}}</p>

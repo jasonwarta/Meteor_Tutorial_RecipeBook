@@ -12,32 +12,37 @@ Recipes.allow({
 Ingredient = new SimpleSchema({
 	name: {
 		type: String,
-		label: "Name"
+		label: "Name",
+		max: 50
 	},
 	amount: {
 		type: String,
-		label: "Quantity"
+		label: "Quantity",
+		max: 50
 	}
 });
 
 Direction = new SimpleSchema({
 	stepNo: {
 		type: String,
-		label: "Step"
+		label: "Step",
+		max: 10
 	},
 	directions: {
 		type: String,
 		label: "Directions",
 		autoform: {
 			rows: 5,
-		}
+		},
+		max: 600
 	}
 });
 
 RecipeSchema = new SimpleSchema({
 	name: {
 		type: String,
-		label: "Name"
+		label: "Name",
+		max: 50
 	},
 	insensitive: {
 		type: String,
@@ -52,19 +57,24 @@ RecipeSchema = new SimpleSchema({
 	},
 	desc: {
 		type: String,
-		label: "Description"
+		label: "Description",
+		max: 200
 	},
 	difficulty: {
-		type: String
+		type: String,
+		max: 30
 	},
 	totalTime: {
-		type: String
+		type: String,
+		max: 30
 	},
 	prepTime: {
-		type: String
+		type: String,
+		max: 30
 	},
 	serves: {
-		type: String
+		type: String,
+		max: 30
 	},
 	ingredients: {
 		type: [Ingredient]
@@ -84,7 +94,7 @@ RecipeSchema = new SimpleSchema({
 		},
 		autoform: {
 			type: "hidden"
-		}
+		},
 	},
 	createdAt: {
 		type: Date,
