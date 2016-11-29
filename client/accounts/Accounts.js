@@ -22,4 +22,16 @@ AccountsTemplates.addFields([
 
 AccountsTemplates.configure({
 	showReCaptcha: true,
+    sendVerificationEmail: true,
+    showResendVerificationEmailLink: true,
+    enforceEmailVerification: true,
+    texts: {
+        info: {
+            emailSent: "info.emailSent",
+            emailVerified: "info.emailVerified",
+            signUpVerifyEmail: "Successful Registration! Please check your email and follow the instructions.",
+            verificationEmailSent: "A new email has been sent to you. If the email doesn't show up in your inbox, be sure to check your spam folder.",
+        }
+    }
+
 });
