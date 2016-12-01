@@ -15,6 +15,6 @@ Meteor.publish('author',function(){
 	return Meteor.users.find({},{fields: {username:1}});
 });
 
-// Meteor.publish('infiniteBrowse', function(limit){
-// 	return Recipes.find({},{limit: limit,sort:{name:1}});
-// });
+Meteor.publish('singleAuthor', function(id) {
+	return Meteor.users.find({_id:id},{fields: {username:1}});
+});

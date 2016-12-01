@@ -5,6 +5,9 @@
 			<i class="fa fa-pencil"></i>
 			<i class="fa fa-trash"></i>
 		{{/if}}
+		{{#if $not recipeOwner}}
+			<h2>{{recipeAuthor recipe.author}}</h2>
+		{{/if}}
 		{{#if editMode}}
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
 		{{else}}

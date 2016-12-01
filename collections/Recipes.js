@@ -13,11 +13,13 @@ Ingredient = new SimpleSchema({
 	name: {
 		type: String,
 		label: "Name",
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		max: 50
 	},
 	amount: {
 		type: String,
 		label: "Quantity",
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		max: 50
 	}
 });
@@ -31,6 +33,7 @@ Direction = new SimpleSchema({
 	directions: {
 		type: String,
 		label: "Directions",
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		autoform: {
 			rows: 5,
 		},
@@ -42,7 +45,8 @@ RecipeSchema = new SimpleSchema({
 	name: {
 		type: String,
 		label: "Name",
-		max: 50
+		max: 50,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 	},
 	insensitive: {
 		type: String,
@@ -58,22 +62,27 @@ RecipeSchema = new SimpleSchema({
 	desc: {
 		type: String,
 		label: "Description",
-		max: 200
+		max: 200,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 	},
 	difficulty: {
 		type: String,
-		max: 30
+		max: 30,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 	},
 	totalTime: {
 		type: String,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		max: 30
 	},
 	prepTime: {
 		type: String,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		max: 30
 	},
 	serves: {
 		type: String,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		max: 30
 	},
 	ingredients: {

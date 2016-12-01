@@ -33,5 +33,4 @@ AccountsTemplates.configure({
     //         verificationEmailSent: "A new email has been sent to you. If the email doesn't show up in your inbox, be sure to check your spam folder.",
     //     }
     // }
-
 });
