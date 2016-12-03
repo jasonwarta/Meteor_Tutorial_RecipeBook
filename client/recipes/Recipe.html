@@ -3,6 +3,12 @@
 		<h3>{{name}}</h3>
 		<i class="fa fa-pencil"></i>
 		<i class="fa fa-trash"></i>
+		<h2>
+			<div class="time">
+				<i class="fa fa-clock-o"></i>
+				{{totalTime}}
+			</div>
+		</h2>
 		{{#if editMode }}
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
 		{{else}}

@@ -5,9 +5,19 @@
 			<i class="fa fa-pencil"></i>
 			<i class="fa fa-trash"></i>
 		{{/if}}
-		{{#if $not recipeOwner}}
-			<h2>{{recipeAuthor recipe.author}}</h2>
-		{{/if}}
+		<h2>
+			{{recipeAuthor recipe.author}}
+			<div class="time">
+				Difficulty: {{recipe.difficulty}}
+				<br>
+				Total <i class="fa fa-clock-o"></i>
+				{{recipe.totalTime}}
+				<br>
+				Prep <i class="fa fa-clock-o"></i>
+				{{recipe.prepTime}}
+				<br>
+			</div>
+		</h2>
 		{{#if editMode}}
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
 		{{else}}

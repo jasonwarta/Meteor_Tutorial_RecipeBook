@@ -2,8 +2,20 @@
 	<article class="recipe">
 		<h3>{{name}}</h3>
 		<i class="fa {{#if favorite _id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
+		<h2>
+			{{recipeAuthor author}}
+			<div class="time">
+				Difficulty: {{difficulty}}
+				<br>
+				Total <i class="fa fa-clock-o"></i>
+				{{totalTime}}
+				<br>
+				Prep <i class="fa fa-clock-o"></i>
+				{{prepTime}}
+				<br>
+			</div>
+		</h2>
 		<p>{{desc}}</p>
-		<p>Author: {{recipeAuthor author}}</p>
 		<a href="/recipe/{{_id}}">View Details</a>
 	</article>
 </template>
