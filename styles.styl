@@ -148,6 +148,9 @@ p
     lost-center 90%
     margin-top 20px 
     // +above($med)
+    @media (min-width: $small)
+        lost-center 90%
+        padding-left $side-nav
     @media (min-width: $med) and (orientation: landscape)
         lost-center 90%
         padding-left $side-nav
@@ -318,7 +321,20 @@ input, select, textarea
     i
         display block
         font-size 2em
-        margin-bottom 10px   
+        margin-bottom 10px
+    +above($small)
+        height 100%
+        z-index: z.mid
+        padding 120px 0
+        fixed top left
+        width $side-nav
+        ul
+            display block
+        shadow-level(-1)
+        a
+            padding 20px 10px
+            &:hover, &.active
+                border-left 4px solid teal   
     +above($med)
         height 100%
         z-index: z.mid
