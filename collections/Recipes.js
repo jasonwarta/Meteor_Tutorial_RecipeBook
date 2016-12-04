@@ -67,8 +67,14 @@ RecipeSchema = new SimpleSchema({
 	},
 	difficulty: {
 		type: String,
-		max: 30,
-	  	regEx: /^[A-Za-z0-9\-.',].*$/,
+		allowedValues: ['Easy', 'Average', 'Difficult'],
+	    autoform: {
+	        options: [
+		        {label: "Easy", value: "Easy"},
+		        {label: "Average", value: "Average"},
+		        {label: "Difficult", value: "Difficult"}
+	        ]
+	    }
 	},
 	totalTime: {
 		type: String,
