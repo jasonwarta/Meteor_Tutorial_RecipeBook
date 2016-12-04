@@ -37,7 +37,6 @@ aldeed:template-extension
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
-meteortoys:allthings
 datariot:ganalytics
 
 accounts-ui
@@ -45,3 +44,6 @@ accounts-password
 useraccounts:unstyled
 
 check@1.2.4
+
+meteortoys:allthings
+
