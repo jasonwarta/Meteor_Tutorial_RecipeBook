@@ -1,6 +1,7 @@
 <template name="Recipe">
 	<article class="recipe">
 		<h3>{{name}}</h3>
+		<i class="fa {{#if favorite _id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
 		<i class="fa fa-pencil"></i>
 		<i class="fa fa-trash"></i>
 		<h2>
@@ -16,7 +17,7 @@
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
 		{{else}}
 			<p>{{desc}}</p>
-			<a href="/recipe/{{_id}}">View Details</a>
+			<a href="/recipe/{{_id}}">Details</a>
 		{{/if}}
 	</article>
 </template>
