@@ -65,6 +65,12 @@ RecipeSchema = new SimpleSchema({
 		max: 200,
 	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 	},
+	source: {
+		type: String,
+		label: "Source",
+		max: 50,
+	  	regEx: /^[A-Za-z0-9\-.',].*$/,
+	},
 	difficulty: {
 		type: String,
 		allowedValues: ['Easy', 'Average', 'Difficult'],
