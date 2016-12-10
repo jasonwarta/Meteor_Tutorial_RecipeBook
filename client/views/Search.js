@@ -7,17 +7,39 @@ Template.Search.onCreated(function() {
 
 Template.Search.helpers({
 	recipes: function(searchString) {
-		var pattern = ".*"+searchString+".*";
-		return Recipes.find({
-			$or:
-				[	
-					{ name: { $regex: pattern, $options: 'i'} },
-					{ desc: { $regex: pattern, $options: 'i'} },
-					{ "ingredients.name": { $regex: pattern, $options: 'i'} },
-				]
-		},{ 
-			sort: {insensitive: 1, author: 1, createdAt: 1}
-		});
+		if(searchString != "" && typeof(searchString) !== 'undefined'){
+			if(searchString.indexOf(',') > -1){
+				var strings = searchString.split(',');
+
+				var query = {};
+				query["$and"] = [];
+				for (var s in strings){
+					query["$and"].push({
+						"ingredients.name": 
+						{
+							$regex: ".*"+strings[s]+".*", $options: 'i'
+						}
+					});
+				}
+				return Recipes.find(query,
+					{sort: {insensitive: 1, author: 1, createdAt: 1}}
+				);
+			}
+
+			else {
+				var pattern=".*"+searchString+".*";
+				return Recipes.find({
+					$or:
+						[	
+							{ name: { $regex: pattern, $options: 'i'} },
+							{ desc: { $regex: pattern, $options: 'i'} },
+							{ "ingredients.name": { $regex: pattern, $options: 'i'} },
+						]
+				},{ 
+					sort: {insensitive: 1, author: 1, createdAt: 1}
+				});
+			}
+		}
 	},
 	search: function(){
 		return Session.get('searchString');
