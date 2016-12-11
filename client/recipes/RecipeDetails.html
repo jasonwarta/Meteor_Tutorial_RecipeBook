@@ -16,6 +16,10 @@
 				Prep <i class="fa fa-clock-o"></i>
 				{{recipe.prepTime}}
 				<br>
+				{{#if recipe.serves}}
+					<i class="fa fa-cutlery"></i>
+					{{recipe.serves}}
+				{{/if}}
 			</div>
 		</h2>
 		{{#if editMode}}
