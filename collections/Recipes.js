@@ -90,6 +90,7 @@ RecipeSchema = new SimpleSchema({
 	},
 	prepTime: {
 		type: String,
+		optional: true,
 	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 		max: 30
 	},
