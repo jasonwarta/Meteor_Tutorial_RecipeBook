@@ -3,7 +3,6 @@ Template.MainNav.helpers({
 		var id=Meteor.users.findOne(Meteor.userId());
 		if(typeof(id) !== 'undefined')
 			return id.username;
-		// return Meteor.users.findOne(Meteor.userId()).username;
 	}
 });
 
