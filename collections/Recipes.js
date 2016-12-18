@@ -28,7 +28,10 @@ Direction = new SimpleSchema({
 	stepNo: {
 		type: Number,
 		label: "Step",
-		min: 1
+		min: 1,
+		defaultValue: function(){
+			return parseInt(this.name.split('.')[1]) + 1;
+		}
 	},
 	directions: {
 		type: String,
@@ -158,6 +161,9 @@ Meteor.methods({
 		},{
 			$pull: { favorites: this.userId }
 		});
+	},
+	log: function(item){
+		console.log(this);
 	}
 });
 
