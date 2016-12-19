@@ -39,7 +39,8 @@ Template.RecipeDetails.helpers({
 
 Template.RecipeDetails.events({
 	'click .fa-trash': function() {
-		Meteor.call('deleteRecipe', this._id);
+		Meteor.call('deleteRecipe', FlowRouter.getParam('id'));
+		FlowRouter.go('myrecipes');
 	},
 	'click .fa-pencil' : function(event, template) {
 		template.editMode.set(!template.editMode.get());
