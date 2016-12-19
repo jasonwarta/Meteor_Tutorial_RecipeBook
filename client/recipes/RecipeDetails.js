@@ -35,6 +35,11 @@ Template.RecipeDetails.helpers({
 		if(typeof(id) !== 'undefined')
 			return id.username;
 	},
+	favorite: function(id) {
+		var favs = Recipes.findOne(id).favorites;
+		if(typeof(favs) !== 'undefined')
+			return favs.includes(Meteor.userId())
+	}
 });
 
 Template.RecipeDetails.events({
