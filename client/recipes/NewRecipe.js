@@ -8,6 +8,7 @@ AutoForm.hooks({
   insertRecipeForm: {
     onSuccess: function () {
 		Session.set('newRecipe', false);
+		window.scrollTo(0,0);
     }
   }
 });
