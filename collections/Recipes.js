@@ -65,6 +65,7 @@ RecipeSchema = new SimpleSchema({
 	desc: {
 		type: String,
 		label: "Description",
+		optional: true,
 		max: 200,
 	  	regEx: /^[A-Za-z0-9\-.',].*$/,
 	},
