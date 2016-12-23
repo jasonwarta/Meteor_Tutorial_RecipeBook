@@ -13,6 +13,10 @@ Template.Recipe.helpers({
 		var favs = Recipes.findOne(id).favorites;
 		if(typeof(favs) !== 'undefined')
 			return favs.includes(Meteor.userId())
+	},
+	emptyDesc: function(desc) {
+		if(typeof(desc) == 'undefined' || desc.trim() == '')
+			return true;
 	}
 });
 

@@ -1,5 +1,5 @@
 <template name="Recipe">
-	<article class="recipe">
+	<article class="recipe" style="{{#if emptyDesc desc}}'padding: 0 20px 40px;'{{/if}}">
 		<h3>{{name}}</h3>
 		<i class="fa {{#if favorite _id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
 		<i class="fa fa-pencil"></i>
