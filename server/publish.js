@@ -11,6 +11,10 @@ Meteor.publish('browse', function(){
 	return Recipes.find({});
 });
 
+Meteor.publish('favs', function(){
+	return Recipes.find({favorites: this.userId});
+});
+
 Meteor.publish('author',function(){
 	return Meteor.users.find({},{fields: {username:1}});
 });
