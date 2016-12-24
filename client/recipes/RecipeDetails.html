@@ -3,30 +3,31 @@
 		<h1>{{recipe.name}}</h1>
 		<i class="fa {{#if favorite recipe._id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
 		{{#if recipeOwner}}
-			
 			<i class="fa fa-pencil"></i>
 			<i class="fa fa-trash"></i>
 		{{/if}}
-		<h2>
-			{{recipeAuthor recipe.author}}
-			<div class="time">
-				Difficulty: {{recipe.difficulty}}
-				<br>
-				Total <i class="fa fa-clock-o"></i>
-				{{recipe.totalTime}}
-				<br>
-				Prep <i class="fa fa-clock-o"></i>
-				{{recipe.prepTime}}
-				<br>
-				{{#if recipe.serves}}
-					<i class="fa fa-cutlery"></i>
-					{{recipe.serves}}
-				{{/if}}
-			</div>
-		</h2>
 		{{#if editMode}}
 			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=recipe autosave=true}}
 		{{else}}
+			<h2>
+				{{recipeAuthor recipe.author}}
+				<div class="time">
+					Difficulty: {{recipe.difficulty}}
+					<br>
+					Total <i class="fa fa-clock-o"></i>
+					{{recipe.totalTime}}
+					<br>
+					{{#if recipe.prepTime}}
+						Prep <i class="fa fa-clock-o"></i>
+						{{recipe.prepTime}}
+						<br>
+					{{/if}}
+					{{#if recipe.serves}}
+						<i class="fa fa-cutlery"></i>
+						{{recipe.serves}}
+					{{/if}}
+				</div>
+			</h2>
 			<p class="desc">{{recipe.desc}}</p>
 			<h3>Ingredients</h3>
 			{{#each recipe.ingredients}}
@@ -39,6 +40,10 @@
 					&nbsp;&nbsp;{{directions}}
 				</ul>
 			{{/each}}
+			{{#if recipe.notes}}
+				<h3>Notes</h3>
+				<dd>{{recipe.notes}}</dd>
+			{{/if}}
 		{{/if}}
 	</article>
 </template>

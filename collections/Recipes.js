@@ -110,6 +110,16 @@ RecipeSchema = new SimpleSchema({
 	directions: {
 		type: [Direction]
 	},
+	notes: {
+		type: String,
+		label: "Notes",
+		regEx: /^[A-Za-z0-9\-.',].*$/,
+		max: 500,
+		optional: true,
+		autoform: {
+			rows: 5,
+		},
+	},
 	author: {
 		type: String,
 		label: "Author",
