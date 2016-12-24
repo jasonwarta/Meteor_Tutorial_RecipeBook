@@ -36,9 +36,12 @@ Template.RecipeDetails.helpers({
 			return id.username;
 	},
 	favorite: function(id) {
-		var favs = Recipes.findOne(id).favorites;
-		if(typeof(favs) !== 'undefined')
-			return favs.includes(Meteor.userId())
+		var recipe = Recipes.findOne(id);
+		if(typeof(recipe) !== 'undefined'){
+			var favs = recipe.favorites;
+			if(typeof(favs) !== 'undefined')
+				return favs.includes(Meteor.userId());
+		}
 	}
 });
 
@@ -52,5 +55,12 @@ Template.RecipeDetails.events({
 	},
 	'submit': function(event, template){
 		template.editMode.set(false);
-	}
+	},'click .fa-heart' : function(event, template) {
+		var id = FlowRouter.getParam('id');
+		Meteor.call('removeFavorite',id)
+	},
+	'click .fa-heart-o' : function(event, template) {
+		var id = FlowRouter.getParam('id');
+		Meteor.call('setFavorite',id)
+	},
 });

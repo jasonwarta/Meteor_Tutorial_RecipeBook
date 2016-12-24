@@ -35,5 +35,8 @@ Template.Recipe.events({
 	},
 	'click .fa-heart-o' : function(event, template) {
 		Meteor.call('setFavorite',template.data._id)
+	},
+	'click h3' : function(event, template) {
+		FlowRouter.go('/recipe/'+this._id);
 	}
 });

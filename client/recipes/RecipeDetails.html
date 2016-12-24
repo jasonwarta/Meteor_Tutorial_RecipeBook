@@ -1,8 +1,9 @@
 <template name="RecipeDetails">
 	<article class="recipe-detail">
 		<h1>{{recipe.name}}</h1>
+		<i class="fa {{#if favorite recipe._id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
 		{{#if recipeOwner}}
-			<i class="fa {{#if favorite recipe._id}}fa-heart{{else}}fa-heart-o{{/if}}"></i>
+			
 			<i class="fa fa-pencil"></i>
 			<i class="fa fa-trash"></i>
 		{{/if}}
