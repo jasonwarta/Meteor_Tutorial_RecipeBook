@@ -22,6 +22,7 @@ Template.RecipeDetails.helpers({
 		return Recipes.findOne({_id: id});
 	},
 	editMode: function() {
+		console.log("toggle edit mode");
 		return Template.instance().editMode.get();
 	},
 	recipeOwner: function(){

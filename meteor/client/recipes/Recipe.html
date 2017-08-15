@@ -14,7 +14,7 @@
 			</div>
 		</h2>
 		{{#if editMode }}
-			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
+			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true resetOnSuccess=false}}
 		{{else}}
 			<p>{{desc}}</p>
 			<a href="/recipe/{{_id}}">Details</a>

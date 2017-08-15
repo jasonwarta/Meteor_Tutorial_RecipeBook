@@ -28,7 +28,8 @@ Template.Recipe.events({
 		template.editMode.set(!template.editMode.get());
 	},
 	'submit': function(event, template){
-		template.editMode.set(false);
+		// template.editMode.set(false);
+		event.preventDefault();
 	},
 	'click .fa-heart' : function(event, template) {
 		Meteor.call('removeFavorite',template.data._id)

@@ -46,7 +46,7 @@ header .greeting {
   list-style: none;
   margin-right: 20px;
   margin-top: 27px;
-above(500px)
+above:(500px)
 }
 header .greeting li {
   display: inline;
@@ -292,9 +292,9 @@ i.fa-spinner {
   color: #fff;
   z-index: 7;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-above(500px)
-above(700px)
-above(960px)
+above:(500px)
+above:(700px)
+above:(960px)
 }
 .side-nav ul {
   margin: 0;
@@ -503,7 +503,7 @@ above(960px)
   transform: translate3d(25%, -80%, 0) scale(0.5);
   background: #fff;
   opacity: 0;
-above(700px)
+above:(700px)
 }
 @include trans();
 @include card(4);
