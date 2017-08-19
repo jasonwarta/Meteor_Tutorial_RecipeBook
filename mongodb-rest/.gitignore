@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__
+mongodb_rest_api/__pycache__
+mongodb_rest_api/lib/__pycache__
+bin
+include
+lib
+.Python
+pip-selfcheck.json

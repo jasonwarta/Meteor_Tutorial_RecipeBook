@@ -1,0 +1,2 @@
+USE_RELOADER=True
+MONGO_DBNAME="meteor"
