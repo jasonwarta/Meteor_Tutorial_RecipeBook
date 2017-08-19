@@ -46,7 +46,7 @@ export default class Header extends Component {
 			<header className="header">
 				<a href="/" style={{textDecoration: 'none'}}>
 					<h1>
-						<i><FontAwesome name="cutlery" /></i>
+						<i><FontAwesome name="cutlery" /></i>&nbsp;
 						Recipe Book
 					</h1>
 				</a>
