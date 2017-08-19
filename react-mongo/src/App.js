@@ -5,6 +5,7 @@ import './App.css';
 import Header from './partials/Header'
 import SideNav from './partials/SideNav'
 
+import Help from './views/Help'
 import MyRecipes from './views/MyRecipes'
 import Search from './views/Search'
 import NoMatch from './views/NoMatch'
@@ -26,7 +27,7 @@ class App extends Component {
               <Route path="/search" component={Search} />
               <Route path="/favorites" />
               <Route path="/recipe/:id" />
-              <Route path="/help" />
+              <Route path="/help" component={Help} />
               <Redirect exact from="/" to="/myrecipes" />
               <Route component={NoMatch} />
             </Switch>
