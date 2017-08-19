@@ -18,4 +18,5 @@ from mongodb_rest_api.lib import *
 
 api = Api(app)
 api.add_resource(REST,"/api/<string:category>", endpoint="list")
+api.add_resource(REST,"/api/<string:category>/<string:item_id>", endpoint="get_one")
 api.add_resource(REST,"/api/search/<string:search>", endpoint="search")
