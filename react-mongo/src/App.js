@@ -7,6 +7,7 @@ import SideNav from './partials/SideNav'
 
 import RecipeDetails from './recipes/RecipeDetails'
 
+import Browse from './views/Browse'
 import Help from './views/Help'
 import MyRecipes from './views/MyRecipes'
 import Search from './views/Search'
@@ -25,7 +26,7 @@ class App extends Component {
 
             <Switch>
               <Route path="/myrecipes" component={MyRecipes} />
-              <Route path="/browse" />
+              <Route path="/browse" component={Browse} />
               <Route path="/search" component={Search} />
               <Route path="/favorites" />
               <Route path="/recipe/:id" component={RecipeDetails} />

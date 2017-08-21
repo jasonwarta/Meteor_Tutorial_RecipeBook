@@ -4,32 +4,33 @@ import 'font-awesome/css/font-awesome.min.css';
 
 export default class Recipe extends Component {
 	render() {
-		let fav = favorite_id ? 
-			<FontAwesome name='heart' /> :
-			<FontAwesome name='heart-o' />
+		// let fav = favorite_id ? 
+		// 	<FontAwesome name='heart' /> :
+		// 	<FontAwesome name='heart-o' />
+		// console.log(this.props);
+		let details = `/recipe/${this.props.recipe._id}`;
 
 		return (
-			<article className="recipe" style="{{#if emptyDesc desc}}'padding: 0 20px 40px;'{{/if}}">
-				<h3>{this.props.name}</h3>
-				<i>{fav}/i>
+			<div>
+			<article className="recipe">
+				<h3>{this.props.recipe.name}</h3>
 				<i><FontAwesome name='pencil'/></i>
 				<i><FontAwesome name='trash'/></i>
 				<h2>
 					<div className="time">
-						Difficulty: {this.props.difficulty}
+						Difficulty: {this.props.recipe.difficulty}
 						<br/>
 						<i><FontAwesome name='clock' /></i>
 						{this.props.totalTime}
 						<br/>
 					</div>
 				</h2>
-				{{#if editMode }}
-					{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true resetOnSuccess=false}}
-				{{else}}
-					<p>{{desc}}</p>
-					<a href="/recipe/{{_id}}">Details</a>
-				{{/if}}
+				<p>{this.props.recipe.desc}</p>
+				<a href={details}>
+					Details
+				</a>
 			</article>
+			</div>
 		);
 	}
 }
