@@ -58,27 +58,34 @@ class REST(Resource):
 	def get(self, category=None, search=None, item_id=None):
 		if item_id:
 			if category and category in self.collections:
-				return get_one(
+				response = get_one(
 					self.collections[category],
 					item_id
 				)
+				response.headers.add('Access-Control-Allow-Origin', '*')
+				return response
+
 
 		elif search:
 			query = re.compile(request.args['name'], re.IGNORECASE)
 
 			if search in self.collections:
-				return get_search(
+				response = get_search(
 					self.collections[search],
 					{'name':query},
 					[('name',ASCENDING)]
 				)
+				response.headers.add('Access-Control-Allow-Origin', '*')
+				return response
 
 			else:
 				return invalid_category(category)
 
 		elif category:
 			if category in self.collections:
-				return get_list(self.collections[category])
+				response = get_list(self.collections[category])
+				response.headers.add('Access-Control-Allow-Origin', '*')
+				return response
 
 			else:
 				return invalid_category(category)
