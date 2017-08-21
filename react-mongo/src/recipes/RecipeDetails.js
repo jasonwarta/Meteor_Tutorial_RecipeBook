@@ -2,18 +2,36 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 
+function Difficulty(props) {
+	return (
+		<div>
+			Difficulty: {props.difficulty} <br/>
+		</div>
+	);
+}
+
+function TotalTime(props) {
+	return (
+			<div>
+			Total <FontAwesome name='clock-o' />
+			&nbsp;{props.totalTime}
+			<br/>
+		</div>
+	);
+}
+
 function PrepTime(props) {
 	let prepTime;
 	if (props.prepTime) {
 		prepTime = (
 			<div>
 				Prep <i><FontAwesome name='clock-o' /></i>
-				{props.prepTime}
+				&nbsp;{props.prepTime}
 				<br/>
 			</div>
 		);
 	} else {
-		prepTime = '';
+		prepTime = <div></div>;
 	}
 
 	return prepTime;
@@ -24,13 +42,13 @@ function Serves(props) {
 	if (props.serves) {
 		serves = (
 			<div>
-				Prep <i><FontAwesome name='cutlery' /></i>
-				{props.serves}
+				<i><FontAwesome name='cutlery' /></i>
+				&nbsp;{props.serves}
 				<br/>
 			</div>
 		);
 	} else {
-		serves = '';
+		serves = <div></div>;
 	}
 
 	return serves;
@@ -43,10 +61,8 @@ function Header(props) {
 			<h2>
 				{props.author}
 				<div className='time'>
-					Difficulty: {props.difficulty}
-					<br/>
-					Total <FontAwesome name='clock-o' /> {props.totalTime}
-					<br/>
+					<Difficulty difficulty={props.difficulty} />
+					<TotalTime totalTime={props.totalTime} />
 					<PrepTime prepTime={props.prepTime} />
 					<Serves serves={props.serves} />
 				</div>
@@ -106,7 +122,7 @@ function Notes(props) {
 			</div>
 		);
 	} else {
-		notes = '';
+		notes = <div></div>;
 	}
 
 	return notes;
